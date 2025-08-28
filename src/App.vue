@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav class="max-w-7xl mx-auto py-4 flex justify-between items-center">
+      <router-link to="/">
+        <div class="logo">
+          <img src="@/assets/logo.png" alt="logo" class="size-12" />
+        </div>
+      </router-link>
+
+      <div class="flex items-center gap-4">
+        <router-link to="/favorite">
+          <span class="inline-block bg-primary-2 rounded-full p-2">
+            <Heart class="size-6 text-primary-1" />
+          </span>
+        </router-link>
+        <router-link to="/cart"
+          ><span class="inline-block bg-primary-2 rounded-full p-2">
+            <ShoppingCart class="size-6 text-primary-1" /> </span
+        ></router-link>
+      </div>
+    </nav>
+
+    <router-view />
+
+    <footer></footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { Heart, ShoppingCart } from "lucide-vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Heart,
+    ShoppingCart,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
