@@ -4,6 +4,7 @@ import CartPage from '@/components/CartPage.vue'
 import FavoritePage from '@/components/FavoritePage.vue'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import ProductPage from '@/components/ProductPage.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,12 @@ const routes = [
     path: '/favorite',
     name: 'Favorite',
     component: Favorite
+  },
+  {
+    path: '/product/:id',
+    name: 'Product',
+    component: ProductPage,
+    props: true
   }
 ]
 
